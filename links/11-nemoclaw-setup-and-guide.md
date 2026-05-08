@@ -1,4 +1,4 @@
-# MemoClaw - Complete Setup & User Guide
+# NemoClaw - Complete Setup & User Guide
 
 ## Table of Contents
 1. [Installation & Setup](#installation--setup)
@@ -25,44 +25,44 @@
 #### Docker Installation (Recommended)
 ```bash
 # Docker Compose setup
-git clone https://github.com/nemoclaw/memoclaw.git
-cd memoclaw
+git clone https://github.com/nemoclaw/nemoclaw.git
+cd nemoclaw
 
 # Build and run
 docker-compose up -d
 
 # Verify installation
-docker-compose exec memoclaw memoclaw --version
+docker-compose exec nemoclaw nemoclaw --version
 ```
 
 #### Local Installation
 ```bash
 # Install package
-pip install memoclaw
+pip install nemoclaw
 
 # Initialize environment
-memoclaw init
+nemoclaw init
 
 # Configure settings
-memoclaw config setup
+nemoclaw config setup
 
 # Start service
-memoclaw service start
+nemoclaw service start
 ```
 
 ### Configuration
 ```bash
 # Set core parameters
-memoclaw config set cache-backend redis
-memoclaw config set cache-size 2GB
-memoclaw config set ttl 3600
+nemoclaw config set cache-backend redis
+nemoclaw config set cache-size 2GB
+nemoclaw config set ttl 3600
 
 # Set model
-memoclaw config set model claude-3-5-sonnet
+nemoclaw config set model claude-3-5-sonnet
 
 # Enable features
-memoclaw config enable memory-persistence
-memoclaw config enable distributed-cache
+nemoclaw config enable memory-persistence
+nemoclaw config enable distributed-cache
 ```
 
 ## User Interface & Dashboard
@@ -81,7 +81,7 @@ Web UI available at `http://localhost:8080`
 #### Web Dashboard Panels
 ```
 ┌──────────────────────────────────────────────────┐
-│ MemoClaw - Memory Dashboard                      │
+│ NemoClaw - Memory Dashboard                      │
 ├──────────────────────────────────────────────────┤
 │ Home │ Memory Graph │ History │ Patterns │ Team  │
 ├──────────────────────────────────────────────────┤
@@ -119,7 +119,7 @@ Query Memory:
 ### Terminal UI (TUI)
 Start interactive memory interface:
 ```bash
-memoclaw tui
+nemoclaw tui
 ```
 
 #### TUI Commands
@@ -179,16 +179,16 @@ Memory Operations:
 #### TUI Memory Visualization
 ```bash
 # Show memory graph
-memoclaw tui --view graph
+nemoclaw tui --view graph
 
 # Show hierarchical tree
-memoclaw tui --view tree
+nemoclaw tui --view tree
 
 # Show table view
-memoclaw tui --view table
+nemoclaw tui --view table
 
 # Interactive exploration
-memoclaw tui --interactive
+nemoclaw tui --interactive
 ```
 
 ### Memory Query Interface
@@ -196,16 +196,16 @@ memoclaw tui --interactive
 #### Query Syntax
 ```bash
 # Find patterns
-memoclaw memory query "react hooks patterns"
+nemoclaw memory query "react hooks patterns"
 
 # Find similar code
-memoclaw memory query-similar ./myfile.js
+nemoclaw memory query-similar ./myfile.js
 
 # Get recommendations
-memoclaw memory recommend "api design"
+nemoclaw memory recommend "api design"
 
 # Historical analysis
-memoclaw memory timeline --pattern-type "optimization"
+nemoclaw memory timeline --pattern-type "optimization"
 ```
 
 #### Query Results Display
@@ -231,28 +231,28 @@ Results:
 ### First Steps
 ```bash
 # Initialize project
-memoclaw project init --name myproject
+nemoclaw project init --name myproject
 
 # Create memory profile
-memoclaw memory create-profile
+nemoclaw memory create-profile
 
 # Run first analysis
-memoclaw analyze --enable-memory ./src
+nemoclaw analyze --enable-memory ./src
 ```
 
 ### Basic Commands
 ```bash
 # Process with memory
-memoclaw process --memory-enabled ./code
+nemoclaw process --memory-enabled ./code
 
 # Query memory
-memoclaw memory query "what's the architecture?"
+nemoclaw memory query "what's the architecture?"
 
 # List stored knowledge
-memoclaw memory list
+nemoclaw memory list
 
 # Export knowledge
-memoclaw memory export --format json
+nemoclaw memory export --format json
 ```
 
 ### Understanding Memory
@@ -277,7 +277,7 @@ claude-3-haiku
 
 ### Model with Memory
 ```yaml
-# memoclaw.yml
+# nemoclaw.yml
 model:
   primary: claude-3-5-sonnet
   fallback: claude-3-haiku
@@ -289,13 +289,13 @@ model:
 ### Context Management
 ```bash
 # Set context size
-memoclaw config set context-window 12000
+nemoclaw config set context-window 12000
 
 # Reserve memory for retrieval
-memoclaw config set memory-reserve 3000
+nemoclaw config set memory-reserve 3000
 
 # Enable smart pruning
-memoclaw config set pruning smart
+nemoclaw config set pruning smart
 ```
 
 ## Core Features
@@ -324,19 +324,19 @@ memoclaw config set pruning smart
 ### Memory Operations
 ```bash
 # Store code pattern
-memoclaw memory store-pattern "react-hooks" ./patterns/
+nemoclaw memory store-pattern "react-hooks" ./patterns/
 
 # Tag memory entry
-memoclaw memory tag "api-design" patterns/rest-api
+nemoclaw memory tag "api-design" patterns/rest-api
 
 # Search memory
-memoclaw memory search "similar patterns" --context api
+nemoclaw memory search "similar patterns" --context api
 
 # Update memory
-memoclaw memory update "react-hooks" ./new-patterns/
+nemoclaw memory update "react-hooks" ./new-patterns/
 
 # Prune old entries
-memoclaw memory prune --older-than 30days
+nemoclaw memory prune --older-than 30days
 ```
 
 ## Memory Management
@@ -354,7 +354,7 @@ Level 4: Global Memory (General patterns)
 
 ### Configuring Storage
 ```yaml
-# memoclaw-storage.yml
+# nemoclaw-storage.yml
 storage:
   backend: redis
   persistence: postgresql
@@ -378,31 +378,31 @@ memory_levels:
 ### Memory Persistence
 ```bash
 # Save session memory
-memoclaw memory checkpoint
+nemoclaw memory checkpoint
 
 # Load previous memory
-memoclaw memory load session-2024-05-08
+nemoclaw memory load session-2024-05-08
 
 # Export for sharing
-memoclaw memory package --output knowledge.tar.gz
+nemoclaw memory package --output knowledge.tar.gz
 
 # Import team knowledge
-memoclaw memory import knowledge.tar.gz
+nemoclaw memory import knowledge.tar.gz
 ```
 
 ### Memory Optimization
 ```bash
 # Analyze memory usage
-memoclaw memory stats
+nemoclaw memory stats
 
 # Optimize storage
-memoclaw memory optimize
+nemoclaw memory optimize
 
 # Archive old memory
-memoclaw memory archive --older-than 90days
+nemoclaw memory archive --older-than 90days
 
 # Clean unused
-memoclaw memory cleanup
+nemoclaw memory cleanup
 ```
 
 ## Workflows & Best Practices
@@ -423,25 +423,25 @@ Deploy → Store Deployment Knowledge
 ### Memory-Aware Code Review
 ```bash
 # Analyze PR with memory
-memoclaw review --with-memory PR-123
+nemoclaw review --with-memory PR-123
 
 # Check against known patterns
-memoclaw review --memory-baseline
+nemoclaw review --memory-baseline
 
 # Generate contextual suggestions
-memoclaw review --memory-context
+nemoclaw review --memory-context
 ```
 
 ### Team Knowledge Building
 ```bash
 # Initialize team memory
-memoclaw team memory init
+nemoclaw team memory init
 
 # Share patterns
-memoclaw memory share pattern-name --team
+nemoclaw memory share pattern-name --team
 
 # Aggregate learnings
-memoclaw memory aggregate --team
+nemoclaw memory aggregate --team
 ```
 
 ### Best Practices
@@ -472,20 +472,20 @@ memoclaw memory aggregate --team
 ### Activating Skills
 ```bash
 # Enable pattern recognition
-memoclaw skills enable pattern-recognition
+nemoclaw skills enable pattern-recognition
 
 # Activate language skills
-memoclaw skills enable javascript-patterns
-memoclaw skills enable python-data-patterns
+nemoclaw skills enable javascript-patterns
+nemoclaw skills enable python-data-patterns
 
 # Custom skills
-memoclaw skills create custom-skill --template pattern
+nemoclaw skills create custom-skill --template pattern
 ```
 
 ### Building Custom Memory Skills
 ```python
-# .memoclaw/skills/custom_skill.py
-from memoclaw import MemorySkill
+# .nemoclaw/skills/custom_skill.py
+from nemoclaw import MemorySkill
 
 class CustomPatternSkill(MemorySkill):
     name = "custom_patterns"
@@ -504,36 +504,36 @@ class CustomPatternSkill(MemorySkill):
 ### Performance Tuning
 ```bash
 # Enable fast mode
-memoclaw config set mode fast
+nemoclaw config set mode fast
 
 # Increase cache
-memoclaw config set cache-size 4GB
+nemoclaw config set cache-size 4GB
 
 # Enable distributed cache
-memoclaw config enable distributed-cache
+nemoclaw config enable distributed-cache
 
 # Parallel processing
-memoclaw process --parallel --workers 8
+nemoclaw process --parallel --workers 8
 ```
 
 ### Memory Efficiency
 ```bash
 # Analyze memory profile
-memoclaw memory profile
+nemoclaw memory profile
 
 # Enable compression
-memoclaw config set compression zstd
+nemoclaw config set compression zstd
 
 # Use sparse indexing
-memoclaw config set indexing sparse
+nemoclaw config set indexing sparse
 
 # Set memory limits
-memoclaw config set max-memory 3GB
+nemoclaw config set max-memory 3GB
 ```
 
 ### Caching Strategy
 ```yaml
-# memoclaw-cache.yml
+# nemoclaw-cache.yml
 cache:
   redis:
     host: localhost
@@ -551,63 +551,63 @@ cache:
 ### Memory Issues
 ```bash
 # Check memory status
-memoclaw memory status
+nemoclaw memory status
 
 # Diagnose issues
-memoclaw memory diagnose
+nemoclaw memory diagnose
 
 # Rebuild indexes
-memoclaw memory rebuild-indexes
+nemoclaw memory rebuild-indexes
 
 # Clear corrupted data
-memoclaw memory repair
+nemoclaw memory repair
 ```
 
 ### Performance Issues
 ```bash
 # Profile performance
-memoclaw profile --detailed
+nemoclaw profile --detailed
 
 # Identify bottlenecks
-memoclaw memory analyze-bottlenecks
+nemoclaw memory analyze-bottlenecks
 
 # Reduce memory size
-memoclaw memory prune --aggressive
+nemoclaw memory prune --aggressive
 
 # Switch to lite mode
-memoclaw config set mode lite
+nemoclaw config set mode lite
 ```
 
 ### Connection Issues
 ```bash
 # Check Redis connection
-memoclaw redis ping
+nemoclaw redis ping
 
 # Test database connection
-memoclaw db test
+nemoclaw db test
 
 # Reset connections
-memoclaw connections reset
+nemoclaw connections reset
 ```
 
 ### Recovery
 ```bash
 # Restore from checkpoint
-memoclaw memory restore --checkpoint latest
+nemoclaw memory restore --checkpoint latest
 
 # Import backup
-memoclaw memory restore --backup backup-file.tar.gz
+nemoclaw memory restore --backup backup-file.tar.gz
 
 # Reset and reinitialize
-memoclaw memory reset --confirm
+nemoclaw memory reset --confirm
 ```
 
 ### Getting Help
-- Documentation: https://memoclaw.docs/
-- Examples: https://memoclaw.docs/examples
-- Issues: https://github.com/nemoclaw/memoclaw/issues
-- Community: https://memoclaw.community/
-- Support: support@memoclaw.io
+- Documentation: https://nemoclaw.docs/
+- Examples: https://nemoclaw.docs/examples
+- Issues: https://github.com/nemoclaw/nemoclaw/issues
+- Community: https://nemoclaw.community/
+- Support: support@nemoclaw.io
 
 ## Complementary Tools & Free Integrations
 
@@ -631,7 +631,7 @@ memoclaw memory reset --confirm
 
 #### Obsidian
 - Free personal knowledge base
-- Works with MemoClaw exports
+- Works with NemoClaw exports
 
 ### Code Analysis & Patterns (Free)
 
@@ -647,7 +647,7 @@ memoclaw memory reset --confirm
 
 #### Redis
 - Free in-memory cache
-- Perfect for MemoClaw
+- Perfect for NemoClaw
 - Open source
 
 #### Valkey
@@ -658,20 +658,20 @@ memoclaw memory reset --confirm
 
 - **Jest**: JavaScript testing
 - **Pytest**: Python testing
-- Generate tests from MemoClaw patterns
+- Generate tests from NemoClaw patterns
 
 ### CI/CD (Free)
 
 #### GitHub Actions
 ```yaml
-name: MemoClaw Learning
+name: NemoClaw Learning
 on: [push]
 jobs:
   learn:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: memoclaw learn-patterns ./src
+      - run: nemoclaw learn-patterns ./src
 ```
 
 ### Visualization Tools (Free)
@@ -716,7 +716,7 @@ jobs:
 #### New Relic / Datadog
 - Free forever tiers
 
-## Free Tech Stack for MemoClaw
+## Free Tech Stack for NemoClaw
 
 ```
 Memory Cache:     Redis (Free)
